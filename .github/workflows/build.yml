@@ -1,0 +1,22 @@
+name: Build
+on:
+  push:
+    branches: [master]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-go@v1
+      - id: platform
+        run: |
+          echo ::set-output os=${{ matrix.os }}
+          echo ::set-output arch=${{ matrix.arch }}
+      - run: make
+        env:
+          GOOS: ${{ outputs.platform.os }}
+          GOARCH: ${{ outputs.platform.arch }}
+      - uses: actions/upload-artifact@v1
+        with:
+          name: ${{ outputs.platform.os }}-${{ outputs.platform.arch }}
+          path: bin
