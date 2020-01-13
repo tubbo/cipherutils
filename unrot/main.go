@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"github.com/markbates/pkger"
 	"github.com/yuya-takeyama/argf"
 	"io/ioutil"
 	"log"
@@ -22,7 +23,11 @@ func index(value rune) int {
 }
 
 func lookup(word string) int {
-	data, err := ioutil.ReadFile("./lib/unrot/words.txt")
+	file, err := pkger.Open("/dictionary.txt")
+	if err != nil {
+		panic(err)
+	}
+	data, err := ioutil.ReadAll(file)
 	words := strings.Split(string(data), "\n")
 	count := 0
 
