@@ -14,7 +14,11 @@ func hexadecimal(input string) {
 
 	bytes := []byte(input)
 
-	hex.Decode(output, bytes)
+	_, err := hex.Decode(output, bytes)
+
+	if err != nil {
+		panic(err)
+	}
 
 	results := string(output)
 	words := strings.Split(results, " ")
@@ -29,18 +33,19 @@ func hexadecimal(input string) {
 	}
 }
 
+// disabled for now since it's not as simple as hex
 func binary(input string) {
-	results := string(input)
-	words := strings.Split(results, " ")
-	count := 0
+	// results := string(input)
+	// words := strings.Split(results, " ")
+	// count := 0
 
-	for _, word := range words {
-		count += dictionary.Lookup(word)
-	}
+	// for _, word := range words {
+	// 	count += dictionary.Lookup(word)
+	// }
 
-	if count > 0 {
-		fmt.Println(results)
-	}
+	// if count > 0 {
+	// 	fmt.Println(results)
+	// }
 }
 
 // Decode a string from binary to text
