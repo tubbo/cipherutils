@@ -84,6 +84,20 @@ func solve(text string, rotation int) {
 	}
 }
 
+// Decode solves a rotational cipher by running the text through all 25
+// permutations, and outputting the result that matches words in the
+// dictionary.
+func Decode(input string) {
+	encoded := strings.ToUpper(input)
+
+	for rotation := 1; rotation <= 25; rotation++ {
+		wg.Add(1)
+		go solve(encoded, rotation)
+	}
+
+	wg.Wait()
+}
+
 func main() {
 	reader, err := argf.Argf()
 
@@ -97,12 +111,5 @@ func main() {
 		log.Fatal(err)
 	}
 
-	original := strings.ToUpper(string(buf))
-
-	for rotation := 1; rotation <= 25; rotation++ {
-		wg.Add(1)
-		go solve(original, rotation)
-	}
-
-	wg.Wait()
+	Decode(string(buf))
 }

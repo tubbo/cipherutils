@@ -1,4 +1,4 @@
-ORG=cipher-tools
+ORG=cipherutils
 PREFIX?=/usr/local
 DIRS=bin share
 INSTALL_DIRS=`find $(DIRS) -type d`
@@ -35,7 +35,7 @@ clean:
 
 dist: $(PROGRAMS)
 	@mkdir -p dist
-	@tar -czvf dist/cipher-tools.tar.gz ./bin ./share ./README.md ./Makefile
+	@tar -czvf dist/cipherutils.tar.gz ./bin ./share ./README.md ./Makefile
 .PHONY: dist
 
 distclean:

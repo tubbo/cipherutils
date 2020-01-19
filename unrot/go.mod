@@ -1,4 +1,4 @@
-module github.com/tubbo/cipher-tools/unrot
+module github.com/tubbo/cipherutils/unrot
 
 go 1.13
 

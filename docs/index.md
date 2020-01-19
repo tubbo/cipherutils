@@ -1,4 +1,4 @@
-# cipher-tools
+# cipherutils
 
 A suite of programs for solving trivial ciphers, typically used in
 [alternate reality games][].
@@ -10,9 +10,9 @@ A suite of programs for solving trivial ciphers, typically used in
 Install it by running...
 
 ```bash
-$ curl -L https://github.com/tubbo/cipher-tools/releases/latest/download/cipher-tools.tar.gz -o cipher-tools.tar.gz
-$ tar zxvf cipher-tools.tar.gz
-$ cd cipher-tools
+$ curl -L https://github.com/tubbo/cipherutils/releases/latest/download/cipherutils.tar.gz -o cipherutils.tar.gz
+$ tar zxvf cipherutils.tar.gz
+$ cd cipherutils
 $ sudo make install
 ```
 
@@ -21,5 +21,5 @@ $ sudo make install
 [unrot]: unrot.1.html
 [byteme]: byteme.1.html
 [radix]: radix.1.html
-[Source Code]: https://github.com/tubbo/cipher-tools
-[Submit an Issue]: https://github.com/tubbo/cipher-tools/issues/new
+[Source Code]: https://github.com/tubbo/cipherutils
+[Submit an Issue]: https://github.com/tubbo/cipherutils/issues/new
