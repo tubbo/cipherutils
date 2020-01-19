@@ -21,6 +21,7 @@ func hexadecimal(input string) string {
 }
 
 func binary(input string) string {
+	return input
 }
 
 // Decode a string from binary to text
@@ -42,7 +43,7 @@ func main() {
 		panic(err)
 	}
 	input := string(buf)
-	result := Decode(input)
+	result := Decode(input, true)
 
 	fmt.Println(result)
 }
