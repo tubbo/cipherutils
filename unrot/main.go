@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/markbates/pkger"
+	"github.com/tubbo/cipherutils/dictionary"
 	"github.com/yuya-takeyama/argf"
 	"io/ioutil"
 	"log"
@@ -20,29 +20,6 @@ func index(value rune) int {
 		}
 	}
 	return -1
-}
-
-func lookup(word string) int {
-	file, err := pkger.Open("/dictionary.txt")
-	if err != nil {
-		panic(err)
-	}
-	data, err := ioutil.ReadAll(file)
-	words := strings.Split(string(data), "\n")
-	count := 0
-
-	if err != nil {
-		panic(err)
-	}
-
-	for _, dictword := range words {
-		if dictword == word {
-			fmt.Println(word)
-			count++
-		}
-	}
-
-	return count
 }
 
 func rotate(position int, rotation int) int {
@@ -76,7 +53,7 @@ func solve(text string, rotation int) {
 	for _, word := range words {
 		trimmed := strings.TrimSuffix(word, "\n")
 		downcased := strings.ToLower(trimmed)
-		found = lookup(downcased)
+		found = dictionary.Lookup(downcased)
 	}
 
 	if found > 0 {
