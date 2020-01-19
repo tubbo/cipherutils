@@ -2,10 +2,8 @@ package main
 
 import (
 	"fmt"
+	"github.com/tubbo/cipherutils/cli"
 	"github.com/tubbo/cipherutils/dictionary"
-	"github.com/yuya-takeyama/argf"
-	"io/ioutil"
-	"log"
 	"strings"
 	"sync"
 )
@@ -76,17 +74,7 @@ func Decode(input string) {
 }
 
 func main() {
-	reader, err := argf.Argf()
-
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	buf, err := ioutil.ReadAll(reader)
-
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	Decode(string(buf))
+	cli.Start(func(input string) {
+		Decode(input)
+	})
 }

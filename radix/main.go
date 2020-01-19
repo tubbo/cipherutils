@@ -3,9 +3,8 @@ package main
 import (
 	"encoding/base64"
 	"fmt"
+	"github.com/tubbo/cipherutils/cli"
 	"github.com/tubbo/cipherutils/dictionary"
-	"github.com/yuya-takeyama/argf"
-	"io/ioutil"
 	"strings"
 )
 
@@ -31,15 +30,5 @@ func Decode(input string) {
 }
 
 func main() {
-	reader, err := argf.Argf()
-	if err != nil {
-		panic(err)
-	}
-	buf, err := ioutil.ReadAll(reader)
-	if err != nil {
-		panic(err)
-	}
-	input := string(buf)
-
-	Decode(input)
+	cli.Start(Decode)
 }
