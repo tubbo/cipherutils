@@ -6,6 +6,7 @@ INSTALL_FILES=`find $(DIRS) -type f`
 DOCS=$(shell find docs/*.1.md -type f | sed 's/docs/share\/man\/man1/g' | sed 's/\.md//g')
 TOOLS=$(shell for tool in `find */main.go -type f`; do dirname $$tool; done)
 PROGRAMS=$(shell for tool in `find */main.go -type f`; do echo bin/`dirname $$tool`; done)
+VERSION?=$(shell git describe --abbrev=0 --tags)
 
 all: dictionary/words.go $(PROGRAMS) $(DOCS)
 .PHONY: all
@@ -36,8 +37,11 @@ clean:
 .PHONY: clean
 
 dist: $(PROGRAMS)
-	@mkdir -p dist
-	@tar -czvf dist/cipherutils.tar.gz ./bin ./share ./README.md ./Makefile
+	@mkdir -p dist/cipherutils-$(VERSION)
+	@for dir in $(INSTALL_DIRS); do cp -a $$dir dist/cipherutils-$(VERSION)/$$dir; done
+	@cp README.md dist/cipherutils-$(VERSION)/README.md
+	@cp Makefile dist/cipherutils-$(VERSION)/Makefile
+	@cd dist; tar -czf cipherutils-$(VERSION).tar.gz ./cipherutils-$(VERSION)
 .PHONY: dist
 
 distclean:

@@ -18,10 +18,13 @@ jobs:
         env:
           GOOS: ${{ matrix.os }}
           GOARCH: ${{ matrix.arch }}
+      - run: make dist
+        env:
+          VERSION: ${{ github.sha }}
       - uses: actions/upload-artifact@v1
         with:
           name: ${{ matrix.os }}-${{ matrix.arch }}
-          path: dist
+          path: dist/cipherutils-${{ github.sha }}
   test:
     runs-on: ubuntu-latest
     steps:
