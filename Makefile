@@ -56,3 +56,7 @@ maintainer-clean:
 check:
 	@for tool in $(TOOLS); do pushd $$tool; go test; popd; done
 .PHONY: check
+
+serve:
+	@jekyll serve -s docs
+.PHONY: serve
