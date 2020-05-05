@@ -2,10 +2,11 @@ package main
 
 import (
 	"fmt"
-	"github.com/tubbo/cipherutils/cli"
-	"github.com/tubbo/cipherutils/dictionary"
 	"strings"
 	"sync"
+
+	"github.com/tubbo/cipherutils/cli"
+	"github.com/tubbo/cipherutils/dictionary"
 )
 
 var wg sync.WaitGroup

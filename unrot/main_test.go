@@ -1,7 +1,6 @@
 package main
 
-import "testing"
-
-func TestUnrot(t *testing.T) {
-	solve("test", 1)
+func ExampleUnrot() {
+	Decode("uryyb jbeyq")
+	// Output: ROT14:	HELLO WORLD
 }
