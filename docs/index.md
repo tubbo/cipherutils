@@ -1,7 +1,11 @@
+---
+path: /
+---
+
 # cipherutils
 
 A suite of programs for solving trivial ciphers, typically used in
-[alternate reality games][].
+alternate reality gaming.
 
 * [unrot][]   - decode rotational ciphers
 * [byteme][]  - decode byte-based ciphers
