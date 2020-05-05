@@ -5,15 +5,12 @@ alternate reality games.
 
 ## Installation
 
-The easiest way to install **cipherutils** is by downloading the latest
-tarball release given your OS and processor architecture. Currently, the
-**386** and **amd64** architectures are supported for **linux**,
-**darwin (macOS)** and **windows**.
-
-For example, recent macOS users would do the following:
+The easiest way to install **cipherutils** is by [downloading the latest
+release][] for your platform, then extracting and installing the
+tarball:
 
 ```bash
-$ curl -sLO https://link.to/github/cipherutils-darwin-amd64.tar.gz
+$ curl -sLO https://github.com/tubbo/cipherutils/releases/download/v0.0.1/cipherutils-darwin-amd64.tar.gz
 $ tar -zxf cipherutils-darwin-amd64.tar.gz
 $ cd cipherutils-darwin-amd64
 $ sudo make install
@@ -22,8 +19,7 @@ $ sudo make install
 ### From Source
 
 Installing from source is as easy as cloning the repo and running
-`make`. You'll need [Go][] installed in order to build from source,
-since the cipherutils are written in Go.
+`make`. You'll need [Go][] installed in order for this to work.
 
 ```bash
 $ git clone https://github.com/tubbo/cipherutils.git
@@ -103,4 +99,13 @@ To run tests for all programs:
 $ make check
 ```
 
+## Contributing
+
+Got an idea for a tool not included in the ciphertools, or a feature
+request/bug report? Head on over to the [issue tracker][] to file a new
+issue and we'll get right to work on it. Or, you can [submit a pull request][]
+to the project if you have a patch that you'd like included.
+
 [Go]: https://golang.org
+[issue tracker]: https://github.com/tubbo/cipherutils/issues
+[submit a pull request]: https://github.com/tubbo/cipherutils/pulls
