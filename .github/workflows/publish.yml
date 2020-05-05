@@ -16,14 +16,10 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-go@v1
-      - id: platform
-        run: |
-          echo ::set-output os=${{ matrix.os }}
-          echo ::set-output arch=${{ matrix.arch }}
       - run: make
         env:
-          GOOS: ${{ outputs.platform.os }}
-          GOARCH: ${{ outputs.platform.arch }}
+          GOOS: ${{ matrix.os }}
+          GOARCH: ${{ matrix.arch }}
       - run: make dist
       - name: Create Release
         id: create_release

@@ -14,17 +14,13 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-go@v1
-      - id: platform
-        run: |
-          echo ::set-output os=${{ matrix.os }}
-          echo ::set-output arch=${{ matrix.arch }}
       - run: make
         env:
-          GOOS: ${{ outputs.platform.os }}
-          GOARCH: ${{ outputs.platform.arch }}
+          GOOS: ${{ matrix.os }}
+          GOARCH: ${{ matrix.arch }}
       - uses: actions/upload-artifact@v1
         with:
-          name: ${{ outputs.platform.os }}-${{ outputs.platform.arch }}
+          name: ${{ matrix.os }}-${{ matrix.arch }}
           path: dist
   test:
     runs-on: ubuntu-latest
