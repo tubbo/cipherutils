@@ -10,7 +10,7 @@ import (
 )
 
 // Decode a message written in Base64
-func Decode(input string) {
+func Decode(input string, verbose bool) {
 	decoded, err := base64.StdEncoding.DecodeString(input)
 
 	if err != nil {
@@ -25,7 +25,7 @@ func Decode(input string) {
 		count += dictionary.Lookup(word)
 	}
 
-	if count > 0 {
+	if verbose || count > 0 {
 		fmt.Println(result)
 	}
 }

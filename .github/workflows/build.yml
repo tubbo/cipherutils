@@ -3,6 +3,15 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        arch:
+          - amd64
+          - 386
+        os:
+          - darwin
+          - linux
+          - windows
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-go@v1
@@ -17,7 +26,7 @@ jobs:
       - uses: actions/upload-artifact@v1
         with:
           name: ${{ outputs.platform.os }}-${{ outputs.platform.arch }}
-          path: bin
+          path: dist
   test:
     runs-on: ubuntu-latest
     steps:

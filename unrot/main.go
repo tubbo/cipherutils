@@ -31,7 +31,7 @@ func rotate(position int, rotation int) int {
 	return rotated - 1
 }
 
-func solve(text string, rotation int) {
+func solve(text string, rotation int, verbose bool) {
 	defer wg.Done()
 	var solution []rune
 
@@ -55,7 +55,7 @@ func solve(text string, rotation int) {
 		found = dictionary.Lookup(downcased)
 	}
 
-	if found > 0 {
+	if verbose || found > 0 {
 		fmt.Printf("ROT%d:\t%s", rotation, string(solution))
 	}
 }
@@ -63,12 +63,12 @@ func solve(text string, rotation int) {
 // Decode solves a rotational cipher by running the text through all 25
 // permutations, and outputting the result that matches words in the
 // dictionary.
-func Decode(input string) {
+func Decode(input string, verbose bool) {
 	encoded := strings.ToUpper(input)
 
 	for rotation := 1; rotation <= 25; rotation++ {
 		wg.Add(1)
-		go solve(encoded, rotation)
+		go solve(encoded, rotation, verbose)
 	}
 
 	wg.Wait()

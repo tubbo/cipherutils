@@ -12,7 +12,7 @@ import (
 
 var wg sync.WaitGroup
 
-func hexadecimal(input string) {
+func hexadecimal(input string, verbose bool) {
 	output, err := hex.DecodeString(input)
 
 	if err != nil {
@@ -27,13 +27,13 @@ func hexadecimal(input string) {
 		count += dictionary.Lookup(word)
 	}
 
-	if count > 0 {
+	if verbose || count > 0 {
 		fmt.Println(results)
 	}
 }
 
 // disabled for now since it's not as simple as hex
-func binary(input string) {
+func binary(input string, verbose bool) {
 	var results string
 
 	for _, c := range input {
@@ -46,15 +46,15 @@ func binary(input string) {
 		count += dictionary.Lookup(word)
 	}
 
-	if count > 0 {
+	if verbose || count > 0 {
 		fmt.Println(results)
 	}
 }
 
 // Decode a string from binary to text
-func Decode(input string) {
-	hexadecimal(input)
-	binary(input)
+func Decode(input string, verbose bool) {
+	hexadecimal(input, verbose)
+	binary(input, verbose)
 }
 
 func main() {
