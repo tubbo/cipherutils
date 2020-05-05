@@ -6,6 +6,7 @@ INSTALL_FILES=`find $(DIRS) -type f`
 DOCS=$(shell find man/*.md -type f | sed 's/man/share\/man\/man1/g' | sed 's/\.md//g')
 TOOLS=$(shell for tool in `find */main.go -type f`; do dirname $$tool; done)
 PROGRAMS=$(shell for tool in `find */main.go -type f`; do echo bin/`dirname $$tool`; done)
+SHELL=/bin/zsh
 
 all: dictionary/words.go $(PROGRAMS) $(DOCS)
 .PHONY: all
@@ -50,5 +51,5 @@ mostlyclean:
 .PHONY: mostlyclean
 
 check:
-	@for tool in $(TOOLS); do cd $$tool && go test; done
+	@for tool in $(TOOLS); do pushd $$tool; go test; popd; done
 .PHONY: check
