@@ -6,6 +6,6 @@ func ExampleDecodeHex() {
 	src := []byte("hello")
 	input := hex.EncodeToString(src)
 
-	Decode(input)
+	Decode(input, false)
 	// Output: hello
 }
