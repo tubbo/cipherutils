@@ -11,7 +11,11 @@ STDIN | `unrot`
 
 ## DESCRIPTION
 
-unrot decodes rotational ciphers
+unrot decodes rotational "Caesar" ciphers, which are achieved by
+rotating letters of the alphabet `N` times (giving them names like ROT14
+and ROT10 ciphers).
+
+Part of the cipherutils: <https://tubbo.github.io/cipherutils>
 
 ## ARGUMENTS
 

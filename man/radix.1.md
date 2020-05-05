@@ -15,6 +15,8 @@ radix decodes a cipher written in base64, base32, or any applicable
 baseNN obfuscation method, and returns the winning result to the
 terminal.
 
+Part of the cipherutils: <https://tubbo.github.io/cipherutils>
+
 ## ARGUMENTS
 
 *FILE*

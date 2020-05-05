@@ -14,6 +14,8 @@ STDIN | `byteme`
 byteme decodes binary and hexadecimal ciphers. Pass either a binary or
 hex cipher and it will output whichever one is solved.
 
+Part of the cipherutils: <https://tubbo.github.io/cipherutils>
+
 ## ARGUMENTS
 
 *FILE*
