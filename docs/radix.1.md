@@ -1,3 +1,7 @@
+---
+path: /radix
+---
+
 radix(1) - decode baseNN ciphers
 ======================================
 

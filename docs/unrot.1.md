@@ -1,5 +1,5 @@
 ---
-path: unrot
+path: /unrot
 ---
 
 unrot(1) - decode rotational ciphers

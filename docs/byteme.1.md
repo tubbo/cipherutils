@@ -1,5 +1,5 @@
 ---
-path: farts
+path: /byteme
 ---
 
 
