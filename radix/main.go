@@ -3,9 +3,10 @@ package main
 import (
 	"encoding/base64"
 	"fmt"
+	"strings"
+
 	"github.com/tubbo/cipherutils/cli"
 	"github.com/tubbo/cipherutils/dictionary"
-	"strings"
 )
 
 // Decode a message written in Base64

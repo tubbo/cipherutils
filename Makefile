@@ -7,12 +7,15 @@ DOCS=$(shell find man/*.md -type f | sed 's/man/share\/man\/man1/g' | sed 's/\.m
 TOOLS=$(shell for tool in `find */main.go -type f`; do dirname $$tool; done)
 PROGRAMS=$(shell for tool in `find */main.go -type f`; do echo bin/`dirname $$tool`; done)
 
-all: $(PROGRAMS) $(DOCS)
+all: dictionary/words.go $(PROGRAMS) $(DOCS)
 .PHONY: all
 
 bin/%:
 	@mkdir -p bin
 	@cd $(@F) && go build -o ../bin/$(@F)
+
+dictionary/words.go:
+	@cd dictionary && ruby goify.rb
 
 install: $(PROGRAMS)
 	@for dir in $(INSTALL_DIRS); do install $$dir $(PREFIX)/$$dir; done
