@@ -23,8 +23,8 @@ $ sudo make install
 
 [Source Code][] - [Submit an Issue][]
 
-[unrot]: unrot
-[byteme]: byteme
-[radix]: radix
+[unrot]: unrot.1.html
+[byteme]: byteme.1.html
+[radix]: radix.1.html
 [Source Code]: https://github.com/tubbo/cipherutils
 [Submit an Issue]: https://github.com/tubbo/cipherutils/issues/new
