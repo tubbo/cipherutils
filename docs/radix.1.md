@@ -7,11 +7,7 @@ radix(1) - decode baseNN ciphers
 
 ## SYNOPSIS
 
-`radix` FILE
-
-or
-
-STDIN | `radix`
+`radix` [-hv] FILE
 
 ## DESCRIPTION
 
@@ -24,7 +20,13 @@ Part of the cipherutils: <https://tubbo.github.io/cipherutils>
 ## ARGUMENTS
 
 *FILE*
-  Path to a file on disk.
+  Path to a file on disk. Data can also be supplied via `STDIN`
+
+## OPTIONS
+
+  * `-h`: Show usage information
+  * `-v`: Verbose mode, show all solutions even if they don't match in
+    the dictionary
 
 ## EXAMPLES
 

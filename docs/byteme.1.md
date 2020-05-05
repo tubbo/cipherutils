@@ -2,17 +2,12 @@
 path: /byteme
 ---
 
-
 byteme(1) - decode binary and hexadecimal
 ======================================
 
 ## SYNOPSIS
 
-`byteme` FILE
-
-or
-
-STDIN | `byteme`
+`byteme` [-hv] FILE
 
 ## DESCRIPTION
 
@@ -24,7 +19,13 @@ Part of the cipherutils: <https://tubbo.github.io/cipherutils>
 ## ARGUMENTS
 
 *FILE*
-  Path to a file on disk.
+  Path to a file on disk. Data can also be supplied via `STDIN`
+
+## OPTIONS
+
+  * `-h`: Show usage information
+  * `-v`: Verbose mode, show all solutions even if they don't match in
+    the dictionary
 
 ## EXAMPLES
 
