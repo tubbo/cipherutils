@@ -18,3 +18,9 @@ jobs:
         with:
           name: ${{ outputs.platform.os }}-${{ outputs.platform.arch }}
           path: bin
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-go@v1
+      - run: make check
