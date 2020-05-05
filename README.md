@@ -6,8 +6,11 @@ alternate reality games.
 ## Installation
 
 The easiest way to install **cipherutils** is by downloading the latest
-tarball release given your OS and processor architecture. For example,
-recent macOS users would use `cipherutils-darwin-amd64.tar.gz`:
+tarball release given your OS and processor architecture. Currently, the
+**386** and **amd64** architectures are supported for **linux**,
+**darwin (macOS)** and **windows**.
+
+For example, recent macOS users would do the following:
 
 ```bash
 $ curl -sLO https://link.to/github/cipherutils-darwin-amd64.tar.gz
@@ -16,7 +19,11 @@ $ cd cipherutils-darwin-amd64
 $ sudo make install
 ```
 
-To install from source:
+### From Source
+
+Installing from source is as easy as cloning the repo and running
+`make`. You'll need [Go][] installed in order to build from source,
+since the cipherutils are written in Go.
 
 ```bash
 $ git clone https://github.com/tubbo/cipherutils.git
@@ -95,3 +102,5 @@ To run tests for all programs:
 ```bash
 $ make check
 ```
+
+[Go]: https://golang.org
