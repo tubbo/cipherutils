@@ -75,7 +75,5 @@ func Decode(input string) {
 }
 
 func main() {
-	cli.Start(func(input string) {
-		Decode(input)
-	})
+	cli.Start(Decode)
 }

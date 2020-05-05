@@ -3,17 +3,17 @@ package main
 import (
 	"encoding/hex"
 	"fmt"
+	"strings"
+	"sync"
+
 	"github.com/tubbo/cipherutils/cli"
 	"github.com/tubbo/cipherutils/dictionary"
-	"strings"
 )
 
+var wg sync.WaitGroup
+
 func hexadecimal(input string) {
-	var output []byte
-
-	bytes := []byte(input)
-
-	_, err := hex.Decode(output, bytes)
+	output, err := hex.DecodeString(input)
 
 	if err != nil {
 		panic(err)
@@ -34,23 +34,27 @@ func hexadecimal(input string) {
 
 // disabled for now since it's not as simple as hex
 func binary(input string) {
-	// results := string(input)
-	// words := strings.Split(results, " ")
-	// count := 0
+	var results string
 
-	// for _, word := range words {
-	// 	count += dictionary.Lookup(word)
-	// }
+	for _, c := range input {
+		results = fmt.Sprintf("%s%b", results, c)
+	}
+	words := strings.Split(results, " ")
+	count := 0
 
-	// if count > 0 {
-	// 	fmt.Println(results)
-	// }
+	for _, word := range words {
+		count += dictionary.Lookup(word)
+	}
+
+	if count > 0 {
+		fmt.Println(results)
+	}
 }
 
 // Decode a string from binary to text
 func Decode(input string) {
-	go hexadecimal(input)
-	go binary(input)
+	hexadecimal(input)
+	binary(input)
 }
 
 func main() {
