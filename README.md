@@ -5,16 +5,16 @@ alternate reality games.
 
 ## Installation
 
-The easiest way to install **cipherutils** is by [downloading the latest
-release][] for your platform, then extracting and installing the
-tarball:
+The easiest way to install **cipherutils** is by using our handy-dandy
+[installation script](install.sh):
 
 ```bash
-$ curl -sLO https://github.com/tubbo/cipherutils/releases/download/v0.0.1/cipherutils-darwin-amd64.tar.gz
-$ tar -zxf cipherutils-darwin-amd64.tar.gz
-$ cd cipherutils-darwin-amd64
-$ sudo make install
+$ curl -sL https://tubbo.github.io/cipherutils/install.sh | bash
 ```
+
+This will find the latest release from GitHub, detect your platform, and
+download/install the correct tarball. You can [view its source code][]
+for more information.
 
 ### From Source
 
@@ -119,3 +119,4 @@ to the project if you have a patch that you'd like included.
 [Go]: https://golang.org
 [issue tracker]: https://github.com/tubbo/cipherutils/issues
 [submit a pull request]: https://github.com/tubbo/cipherutils/pulls
+[view its source code]: https://github.com/tubbo/cipherutils/blob/master/docs/install.sh

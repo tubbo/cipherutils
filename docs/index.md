@@ -14,9 +14,24 @@ alternate reality gaming.
 
 ## Installation
 
-1. Download the [latest release][] for your platform
-2. Extract the tarball into a directory
-3. `cd` into that directory and run `sudo make install`
+To install the `unrot`, `byteme`, and `radix` programs on your
+machine, run the following command:
+
+```bash
+$ curl -sL https://tubbo.github.io/cipherutils/install.sh | bash
+```
+
+## Usage
+
+Read the manpages for [unrot][], [byteme][], and [radix][] to find out
+more about how they work. You can also append a `-h` to any command to
+find out usage information. Manpages are available by running:
+
+```bash
+$ man unrot
+$ man byteme
+$ man radix
+```
 
 [Source Code][] - [Submit an Issue][]
 
