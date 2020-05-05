@@ -28,6 +28,16 @@ $ make
 $ sudo make install
 ```
 
+### Using Go Get
+
+You can also `go get` any of the individual CLI tools:
+
+```bash
+$ go get github.com/tubbo/cipherutils/unrot
+$ go get github.com/tubbo/cipherutils/byteme
+$ go get github.com/tubbo/cipherutils/radix
+```
+
 ## Usage
 
 Each of the cipherutils has their own man pages, so running `man` on
