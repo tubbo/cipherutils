@@ -12,14 +12,11 @@ alternate reality gaming.
 * [byteme][]  - decode byte-based ciphers
 * [radix][]   - decode base ciphers
 
-Install it by running...
+## Installation
 
-```bash
-$ curl -L https://github.com/tubbo/cipherutils/releases/latest/download/cipherutils.tar.gz -o cipherutils.tar.gz
-$ tar zxvf cipherutils.tar.gz
-$ cd cipherutils
-$ sudo make install
-```
+1. Download the [latest release][] for your platform
+2. Extract the tarball into a directory
+3. `cd` into that directory and run `sudo make install`
 
 [Source Code][] - [Submit an Issue][]
 
@@ -28,3 +25,4 @@ $ sudo make install
 [radix]: radix.1.html
 [Source Code]: https://github.com/tubbo/cipherutils
 [Submit an Issue]: https://github.com/tubbo/cipherutils/issues/new
+[latest release]: https://github.com/tubbo/cipherutils/releases
