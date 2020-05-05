@@ -3,7 +3,7 @@ PREFIX?=/usr/local
 DIRS=bin share
 INSTALL_DIRS=`find $(DIRS) -type d`
 INSTALL_FILES=`find $(DIRS) -type f`
-DOCS=$(shell find man/*.md -type f | sed 's/man/share\/man\/man1/g' | sed 's/\.md//g')
+DOCS=$(shell find docs/*.1.md -type f | sed 's/docs/share\/man\/man1/g' | sed 's/\.md//g')
 TOOLS=$(shell for tool in `find */main.go -type f`; do dirname $$tool; done)
 PROGRAMS=$(shell for tool in `find */main.go -type f`; do echo bin/`dirname $$tool`; done)
 SHELL=/bin/zsh
@@ -29,9 +29,8 @@ uninstall:
 share/man/man1:
 	@mkdir -p share/man/man1
 share/man/man1/%.1: share/man/man1
-	@ronn --date="2014-11-01" --manual="User Manual" --organization="$(ORG)" --style=dark man/$(@F).md
-	@mv man/$(@F) share/man/man1/$(@F)
-	@mv man/$(@F).html docs/$(@F).html
+	@ronn --roff --date="2014-11-01" --manual="User Manual" --organization="$(ORG)" --style=dark docs/$(@F).md
+	@mv docs/$(@F) share/man/man1/$(@F)
 
 clean:
 	@rm -rf bin share dist

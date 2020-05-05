@@ -1,19 +1,23 @@
-unrot(1) - decode rotational ciphers
+---
+path: farts
+---
+
+
+byteme(1) - decode binary and hexadecimal
 ======================================
 
 ## SYNOPSIS
 
-`unrot` FILE
+`byteme` FILE
 
 or
 
-STDIN | `unrot`
+STDIN | `byteme`
 
 ## DESCRIPTION
 
-unrot decodes rotational "Caesar" ciphers, which are achieved by
-rotating letters of the alphabet `N` times (giving them names like ROT14
-and ROT10 ciphers).
+byteme decodes binary and hexadecimal ciphers. Pass either a binary or
+hex cipher and it will output whichever one is solved.
 
 Part of the cipherutils: <https://tubbo.github.io/cipherutils>
 
@@ -27,13 +31,13 @@ Part of the cipherutils: <https://tubbo.github.io/cipherutils>
 Read from a file:
 
 ```
-unrot ./file.txt
+byteme ./file.txt
 ```
 
 Read from STDIN:
 
 ```
-echo ./file.txt | unrot
+echo ./file.txt | byteme
 ```
 
 ## AUTHOR
@@ -42,5 +46,5 @@ Tom Scott <http://psychedeli.ca>
 
 ## SEE ALSO
 
-byteme(1)
+unrot(1)
 radix(1)
