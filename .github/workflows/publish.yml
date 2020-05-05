@@ -5,6 +5,14 @@ on:
 jobs:
   release:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        arch:
+          - 386
+          - amd64
+        os:
+          - darwin
+          - linux
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-go@v1
@@ -33,5 +41,5 @@ jobs:
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./dist/cipherutils.tar.gz
-          asset_name: cipherutils.tar.gz
+          asset_name: cipherutils-${{ matrix.os }}-${{ matrix.arch }}.tar.gz
           asset_content_type: application/tar+gzip
