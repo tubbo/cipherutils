@@ -53,8 +53,12 @@ func binary(input string, verbose bool) {
 
 // Decode a string from binary to text
 func Decode(input string, verbose bool) {
-	hexadecimal(input, verbose)
-	binary(input, verbose)
+	tokens := strings.Split(input, " ")
+
+	for _, token := range tokens {
+		hexadecimal(token, verbose)
+		binary(token, verbose)
+	}
 }
 
 func main() {
