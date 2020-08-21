@@ -1,5 +1,7 @@
 name: Build
 on: [push]
+env:
+  GO11MODULES: true
 jobs:
   build:
     runs-on: ubuntu-latest
