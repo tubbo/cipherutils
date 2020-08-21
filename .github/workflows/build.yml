@@ -29,7 +29,7 @@ jobs:
           VERSION: ${{ github.sha }}
       - uses: actions/upload-artifact@v2
         with:
-          name: ${{ matrix.os }}-${{ matrix.arch }}
+          name: cipherutils-${{ github.sha }}-${{ matrix.os }}-${{ matrix.arch }}
           path: dist/cipherutils-${{ github.sha }}
   # test:
   #   runs-on: ubuntu-latest
