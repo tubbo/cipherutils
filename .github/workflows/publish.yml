@@ -37,7 +37,6 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-    steps:
       - name: Create GitHub Release
         uses: fnkr/github-action-ghr@v1
         env:
