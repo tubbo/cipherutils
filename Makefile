@@ -13,7 +13,7 @@ all: dictionary/words.go $(PROGRAMS) $(DOCS)
 
 bin/%:
 	@mkdir -p bin
-	@cd $(@F) && go mod download && go build -o ../bin/$(@F)
+	@cd $(@F) && go build -o ../bin/$(@F)
 
 dictionary/words.go:
 	@cd dictionary && ruby goify.rb
