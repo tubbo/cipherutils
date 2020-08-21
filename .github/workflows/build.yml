@@ -1,5 +1,8 @@
 name: Build
-on: [push]
+on:
+  push:
+    tags-ignore:
+      - 'v*'
 env:
   GO11MODULES: true
 jobs:
