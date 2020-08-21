@@ -37,13 +37,20 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - name: Download Artifacts
-        uses: actions/download-artifact@v2
-        with:
-          path: dist
-      - name: Create Release
-        uses: softprops/action-gh-release@v1
-        with:
-          files: dist/**/*
+    steps:
+      - name: Create GitHub Release
+        uses: fnkr/github-action-ghr@v1
         env:
+          GHR_COMPRESS: xz
+          GHR_PATH: dist/
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # - name: Download Artifacts
+      #   uses: actions/download-artifact@v2
+      #   with:
+      #     path: dist
+      # - name: Create Release
+      #   uses: softprops/action-gh-release@v1
+      #   with:
+      #     files: dist/*.tar.gz
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
