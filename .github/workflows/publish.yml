@@ -31,7 +31,7 @@ jobs:
           VERSION: ${{ steps.get_version.outputs.version }}
       - uses: actions/upload-artifact@v2
         with:
-          name: cipherutils-${{ steps.get_version.outputs.version}}-${{ matrix.os }}-${{ matrix.arch }}
+          name: cipherutils-${{ matrix.os }}-${{ matrix.arch }}-${{ steps.get_version.outputs.version }}
           path: dist/cipherutils-${{ steps.get_version.outputs.version }}
   release:
     needs: build
@@ -45,3 +45,5 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           files: dist/*.tar.gz
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
