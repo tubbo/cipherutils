@@ -36,4 +36,8 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-go@v1
+        with:
+          go-version: 1.13.x
+      - uses: actions/setup-ruby@v1
+      - run: make
       - run: make check
